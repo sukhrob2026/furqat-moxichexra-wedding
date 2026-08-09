@@ -1,0 +1,967 @@
+/* =========================
+   FURQATJON & MOXICHEXRA
+   WEDDING INVITATION
+   RESPONSIVE DESIGN
+========================= */
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4efe7;
+    color: #241d19;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+
+/* =========================
+   COLOR SYSTEM
+========================= */
+
+:root {
+    --cream: #f4efe7;
+    --cream-dark: #e9dfd1;
+    --brown: #29211d;
+    --brown-light: #5a4940;
+    --gold: #b08b57;
+    --white: #ffffff;
+}
+
+
+/* =========================
+   OPENING SCREEN
+========================= */
+
+.opening {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    min-height: 100svh;
+
+    background:
+            linear-gradient(
+                    rgba(20, 15, 12, 0.40),
+                    rgba(20, 15, 12, 0.72)
+            ),
+            url("images/hero.jpg") center center / cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: var(--white);
+
+    transition:
+            opacity 1.5s ease,
+            visibility 1.5s ease;
+}
+
+.opening.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.opening-content {
+    width: min(90%, 800px);
+
+    animation: openingAppear 2s ease forwards;
+}
+
+.eyebrow {
+    font-size: clamp(8px, 1.2vw, 12px);
+    letter-spacing: clamp(3px, 0.7vw, 6px);
+
+    margin-bottom: clamp(20px, 4vh, 35px);
+
+    opacity: 0.85;
+}
+
+.opening h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(60px, 10vw, 130px);
+
+    font-weight: 400;
+
+    line-height: 0.78;
+}
+
+.opening h1 span {
+    display: block;
+
+    font-size: 45%;
+
+    margin: 15px 0;
+
+    font-style: italic;
+}
+
+.ornament {
+    margin: clamp(20px, 4vh, 35px) 0;
+
+    color: var(--gold);
+
+    font-size: 15px;
+}
+
+.date {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(19px, 2.5vw, 28px);
+
+    letter-spacing: clamp(3px, 0.8vw, 7px);
+}
+
+.location {
+    margin-top: 10px;
+
+    font-size: clamp(8px, 1vw, 11px);
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+#openInvitation {
+    margin-top: clamp(30px, 6vh, 55px);
+
+    padding: 16px 30px;
+
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.65);
+
+    cursor: pointer;
+
+    letter-spacing: 2px;
+
+    font-size: 10px;
+
+    transition:
+            background 0.4s ease,
+            color 0.4s ease,
+            transform 0.4s ease;
+}
+
+#openInvitation:hover {
+    background: white;
+
+    color: var(--brown);
+
+    transform: translateY(-3px);
+}
+
+.arrow {
+    margin-left: 15px;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.section {
+    min-height: 100svh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding:
+            clamp(80px, 10vw, 150px)
+            clamp(20px, 5vw, 80px);
+
+    text-align: center;
+}
+
+.section-inner {
+    width: min(100%, 850px);
+}
+
+.small-title {
+    font-size: clamp(8px, 1vw, 11px);
+
+    letter-spacing: clamp(3px, 0.7vw, 6px);
+
+    margin-bottom: clamp(25px, 4vw, 40px);
+
+    opacity: 0.6;
+}
+
+.section h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-weight: 400;
+
+    font-size: clamp(48px, 8vw, 100px);
+
+    line-height: 0.9;
+}
+
+.description {
+    width: min(100%, 500px);
+
+    margin: 35px auto 0;
+
+    line-height: 1.9;
+
+    font-size: clamp(11px, 1.3vw, 14px);
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    background: var(--cream);
+}
+
+.intro h2 {
+    color: var(--brown);
+}
+
+
+/* =========================
+   DATE
+========================= */
+
+.date-section {
+    background: var(--cream-dark);
+}
+
+.big-date {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: clamp(15px, 4vw, 40px);
+
+    margin: clamp(30px, 5vw, 60px) 0;
+}
+
+.big-date > span {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(110px, 18vw, 240px);
+
+    line-height: 0.7;
+}
+
+.big-date div {
+    text-align: left;
+}
+
+.big-date strong {
+    display: block;
+
+    font-size: clamp(10px, 1.3vw, 14px);
+
+    letter-spacing: clamp(3px, 0.6vw, 6px);
+}
+
+.big-date small {
+    display: block;
+
+    margin-top: 10px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(24px, 3vw, 34px);
+}
+
+.weekday {
+    font-size: 10px;
+
+    letter-spacing: 5px;
+}
+
+.line {
+    width: 70px;
+
+    height: 1px;
+
+    background: var(--brown);
+
+    margin: 30px auto;
+
+    opacity: 0.3;
+}
+
+
+/* =========================
+   EVENTS
+========================= */
+
+.events {
+    background: var(--cream);
+}
+
+.events h2 {
+    margin-bottom: clamp(50px, 7vw, 80px);
+}
+
+.event-list {
+    width: min(100%, 650px);
+
+    margin: auto;
+}
+
+.event {
+    padding: clamp(25px, 4vw, 40px) 0;
+
+    border-bottom: 1px solid rgba(36,29,25,0.15);
+
+    transition: transform 0.4s ease;
+}
+
+.event:hover {
+    transform: translateX(8px);
+}
+
+.event-time {
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.5;
+}
+
+.event h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    font-weight: 500;
+
+    margin: 8px 0;
+}
+
+.event p {
+    font-size: clamp(10px, 1.2vw, 13px);
+
+    line-height: 1.7;
+}
+
+.event.highlight h3 {
+    font-size: clamp(38px, 5vw, 55px);
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo-section {
+    min-height: 100svh;
+
+    background: #181411;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+            clamp(30px, 6vw, 70px)
+            clamp(15px, 4vw, 50px);
+}
+
+.photo-container {
+    position: relative;
+
+    width: min(100%, 650px);
+
+    aspect-ratio: 2268 / 4032;
+
+    max-height: 90svh;
+
+    overflow: hidden;
+}
+
+.photo-container img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+.photo-container::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+            linear-gradient(
+                    transparent 45%,
+                    rgba(0,0,0,0.72)
+            );
+
+    pointer-events: none;
+}
+
+.photo-caption {
+    position: absolute;
+
+    bottom: clamp(20px, 4vw, 40px);
+
+    left: clamp(20px, 4vw, 40px);
+
+    right: 20px;
+
+    z-index: 2;
+
+    color: white;
+
+    text-align: left;
+}
+
+.photo-caption p {
+    font-size: clamp(8px, 1vw, 11px);
+
+    letter-spacing: 4px;
+}
+
+.photo-caption span {
+    display: block;
+
+    margin-top: 10px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(18px, 2vw, 24px);
+}
+
+
+/* =========================
+   LOCATION
+========================= */
+
+.location-section {
+    background: var(--cream-dark);
+}
+
+.map-button {
+    margin-top: 40px;
+
+    padding: 15px 25px;
+
+    background: transparent;
+
+    border: 1px solid var(--brown);
+
+    color: var(--brown);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+    min-height: 80svh;
+
+    background: var(--brown);
+
+    color: var(--cream);
+}
+
+.countdown {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: clamp(15px, 5vw, 80px);
+
+    margin-top: clamp(45px, 7vw, 80px);
+}
+
+.countdown div {
+    text-align: center;
+}
+
+.countdown strong {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(38px, 7vw, 85px);
+
+    font-weight: 400;
+}
+
+.countdown span {
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   RSVP
+========================= */
+
+.rsvp {
+    background: var(--cream);
+}
+
+.rsvp-button {
+    display: inline-block;
+
+    margin-top: 40px;
+
+    padding: 18px 35px;
+
+    background: var(--brown);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    transition:
+            transform 0.3s ease,
+            background 0.3s ease;
+}
+
+.rsvp-button:hover {
+    transform: translateY(-3px);
+
+    background: var(--brown-light);
+}
+
+.phone {
+    margin-top: 20px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.5;
+}
+
+
+/* =========================
+   FINAL SECTION
+========================= */
+
+.final-section {
+    min-height: 100svh;
+
+    position: relative;
+
+    background:
+            linear-gradient(
+                    rgba(15,10,8,0.50),
+                    rgba(15,10,8,0.78)
+            ),
+            url("images/hero.jpg") center center / cover no-repeat;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.final-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+.final-content > p:first-child {
+    font-size: 10px;
+
+    letter-spacing: 5px;
+}
+
+.final-content h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 10vw, 130px);
+
+    font-weight: 400;
+
+    line-height: 0.8;
+
+    margin: 30px 0;
+}
+
+.final-content h2 span {
+    display: block;
+
+    font-size: 45%;
+
+    margin: 15px;
+}
+
+.final-content small {
+    display: block;
+
+    margin-top: 35px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(18px, 2.5vw, 25px);
+}
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.section-inner,
+.photo-container,
+.final-content {
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition:
+            opacity 1.2s ease,
+            transform 1.2s ease;
+}
+
+.section-inner.visible,
+.photo-container.visible,
+.final-content.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   OPENING ANIMATION
+========================= */
+
+@keyframes openingAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+                translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+                translateY(0);
+    }
+
+}
+
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (min-width: 601px) and (max-width: 1000px) {
+
+    .opening h1 {
+        font-size: clamp(75px, 11vw, 110px);
+    }
+
+    .section {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .photo-container {
+        width: min(70%, 600px);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .opening {
+        background-position: center center;
+    }
+
+    .opening-content {
+        width: 92%;
+    }
+
+    .opening h1 {
+        font-size: clamp(58px, 17vw, 85px);
+    }
+
+    .eyebrow {
+        letter-spacing: 3px;
+    }
+
+    .date {
+        letter-spacing: 4px;
+    }
+
+    .section {
+        min-height: 100svh;
+
+        padding:
+                90px
+                20px;
+    }
+
+    .section h2 {
+        font-size: clamp(48px, 15vw, 75px);
+    }
+
+    .big-date {
+        gap: 15px;
+    }
+
+    .big-date > span {
+        font-size: clamp(100px, 30vw, 150px);
+    }
+
+    .big-date strong {
+        letter-spacing: 3px;
+    }
+
+    .big-date small {
+        font-size: 24px;
+    }
+
+    .weekday {
+        letter-spacing: 4px;
+    }
+
+    .events h2 {
+        margin-bottom: 50px;
+    }
+
+    .event {
+        padding: 28px 5px;
+    }
+
+    .event:hover {
+        transform: none;
+    }
+
+    .photo-section {
+        min-height: auto;
+
+        padding:
+                35px
+                15px;
+    }
+
+    .photo-container {
+        width: 100%;
+
+        max-height: none;
+
+        aspect-ratio: 2268 / 4032;
+    }
+
+    .photo-caption {
+        bottom: 25px;
+        left: 20px;
+    }
+
+    .countdown {
+        gap: 12px;
+
+        margin-top: 50px;
+    }
+
+    .countdown strong {
+        font-size: clamp(32px, 10vw, 50px);
+    }
+
+    .countdown span {
+        font-size: 6px;
+        letter-spacing: 2px;
+    }
+
+    .rsvp-button {
+        width: min(100%, 300px);
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 360px) {
+
+    .opening h1 {
+        font-size: 55px;
+    }
+
+    .countdown {
+        gap: 8px;
+    }
+
+    .countdown strong {
+        font-size: 29px;
+    }
+
+    .countdown span {
+        font-size: 5px;
+    }
+
+}
+
+
+/* =========================
+   LANDSCAPE PHONES
+========================= */
+
+@media (max-height: 550px) and (orientation: landscape) {
+
+    .opening {
+        align-items: center;
+    }
+
+    .opening-content {
+        transform: scale(0.75);
+    }
+
+    .section {
+        min-height: 120vh;
+    }
+
+}
+
+/* =========================
+   MUSIC CONTROL
+========================= */
+
+.music-control {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    z-index: 500;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 14px;
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    border-radius: 30px;
+
+    background: rgba(41,33,29,0.78);
+
+    backdrop-filter: blur(10px);
+
+    color: white;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    pointer-events: none;
+
+    transition:
+            opacity 0.5s ease,
+            transform 0.5s ease,
+            background 0.3s ease;
+}
+
+.music-control.active,
+.music-control:not(.active) {
+    pointer-events: auto;
+}
+
+.music-control.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.music-control:hover {
+    background: rgba(41,33,29,0.95);
+}
+
+.music-icon {
+    font-size: 16px;
+
+    line-height: 1;
+}
+
+@media (max-width: 600px) {
+
+    .music-control {
+        right: 15px;
+        bottom: 15px;
+
+        padding: 9px 12px;
+    }
+
+}
